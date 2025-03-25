@@ -1,0 +1,21 @@
+fragment AllBookFields on BookType {
+  id
+  name
+  description
+  createdAt
+  excerpt
+}
+
+query getAllBook_Fields {
+  allBooks {
+    ...AllBookFields
+  }
+}
+
+query getBook_field_names {
+  __type(name: "BookType") {
+    fields {
+      name
+    }
+  }
+}
